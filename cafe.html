@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mug Shot Cafe</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="cafestyle.css">
+
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mug Shot Cafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center py-5">
+        <div class="container">
+            <h1>Mug Shot Cafe</h1>
+            <p>Your daily escape to coffee and coast.</p>
+            <a href="#products" class="btn btn-dark">View Our Coffee</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 fade-in">
+                    <h2>About Us</h2>
+                    <p><p>Mug Shot Cafe is a charming beachside café where the cozy atmosphere perfectly complements the soothing sounds of the sea. Guests can sip on carefully crafted coffees while watching the waves or enjoying a breathtaking sunset. Every visit is designed to feel relaxing and comforting, making it the perfect spot to unwind or catch up with friends. Our passion for quality coffee and warm ambiance ensures a memorable experience every time.</p>
+</p>
+                </div>
+                <div class="col-md-6 fade-in">
+                    <img src="1.png" alt="Cafe Image" class="card-img-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fade-in"> Coffee Menu </h2>
+            <div class="row g-4">
+
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="mc.png" alt="Matcha Coffee" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Matcha Coffee</h5>
+            <p class="card-text">A smooth blend of earthy matcha and rich espresso for a unique energy boost.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="sc.png" alt="Salted Caramel" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Salted Caramel</h5>
+            <p class="card-text">Sweet caramel with a hint of salt mixed into creamy espresso perfection.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="sl.png" alt="Spanish Latte" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Spanish Latte</h5>
+            <p class="card-text">A velvety latte sweetened with condensed milk for a rich, smooth flavor.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="cm.png" alt="Caramel Macchiato" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Caramel Macchiato</h5>
+            <p class="card-text">Layered espresso, milk, and golden caramel drizzle in every sip.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="e.png" alt="Espresso" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Espresso</h5>
+            <p class="card-text">A bold and intense shot of pure coffee to power your day.</p>
+        </div>
+    </div>
+</div>
+ 
+<div class="col-md-4 fade-in">
+    <div class="card h-100">
+        <img src="vl.png" alt="Vienna Latte" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Vienna Latte</h5>
+            <p class="card-text">Vanilla mascarpone espresso topped with decadent Vienna cream and burnt caramel.</p>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+    <footer class="text-center py-4">
+        <div class="container">
+            <p>📍 Bersamin, Alcala, Pangasinan</p>
+            <p>📞 +63 9559647971</p>
+            <p>✉ mugshotcafe@gmail.com</p>
+            <p class="mb-0">© 2026 Mug Shot Cafe</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.2 };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => appearOnScroll.observe(fader));
+    </script>
+
+</body>
+</html>
